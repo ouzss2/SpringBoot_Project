@@ -49,7 +49,7 @@ pipeline {
                     docker pull ouzss/springbootimage:latest  
                     docker stop springbootimage
                     docker rm springbootimage
-                    docker run -v /opt/logs:/logs -p 9012:9012 --name springbootimage --network dbconnexion --restart=always -t -d ouzss/springbootimage:latest 
+                    docker run -v /opt/logs:/logs -p 9012:9012 --name springbootimage --restart=always -t -d ouzss/springbootimage:latest 
 
                 '''
             }
