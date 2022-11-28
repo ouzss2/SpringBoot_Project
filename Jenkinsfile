@@ -14,6 +14,15 @@ pipeline {
                 sh 'chmod 775 *'
             }
         }
+         stages {
+
+         stage('Email') {
+            steps {
+                        emailext body: 'a build has been started', recipientProviders: [developers()], subject: 'build triggred', to: 'oussemamansouri4@gmail.com'
+            }
+        }
+        
+
 
         stage('Compile stage') {
             steps {
