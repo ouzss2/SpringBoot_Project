@@ -14,7 +14,6 @@ pipeline {
                 sh 'chmod 775 *'
             }
         }
-         stages {
 
          stage('Email') {
             steps {
