@@ -15,9 +15,9 @@ pipeline {
             }
         }
 
-         stage('Email') {
+         stage('Notifying') {
             steps {
-                        emailext body: 'a build has been started', recipientProviders: [developers()], subject: 'build triggred', to: 'bochsamia@gmail.com'
+             mail bcc: 'hehe', body: 'Validatio <project started a build you may check it ', cc: 'hehe', from: '', replyTo: '', subject: 'build is triggred', to: 'bochsamia@gmail.com'
             }
         }
         
