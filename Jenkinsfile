@@ -17,7 +17,7 @@ pipeline {
 
          stage('Notifying') {
             steps {
-             mail bcc: 'hehe', body: 'Validatio <project started a build you may check it ', cc: 'hehe', from: '', replyTo: '', subject: 'build is triggred', to: 'bochsamia@gmail.com'
+             mail bcc: 'hehe', body: 'Validatio <project started a build you may check it ', cc: 'hehe', from: '', replyTo: '', subject: 'build is triggred', to: 'gmail@gmail.com'
             }
         }
         
@@ -40,7 +40,7 @@ pipeline {
 
             steps {
                 sh '''
-                    docker login -u "ouzss" -p "Samia@58623712"
+                    docker login -u "username" -p "password"
                     docker build --no-cache -t springbootimage:latest .
                     docker tag springbootimage:latest ouzss/springbootimage:latest
                     docker push ouzss/springbootimage:latest
@@ -53,7 +53,7 @@ pipeline {
 
             steps {
                 sh '''
-                docker login -u "ouzss" -p "Samia@58623712"
+                docker login -u "username" -p "password"
                     docker pull ouzss/springbootimage:latest  
                     docker stop springbootimage
                     docker rm springbootimage
